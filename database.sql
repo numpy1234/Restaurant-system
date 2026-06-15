@@ -12,7 +12,7 @@ password VARCHAR(100)
 
 
 INSERT INTO Users VALUES
-('admin','Root@12345');
+('admin','jee2020');
 
 
 
