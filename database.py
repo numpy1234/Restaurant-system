@@ -9,7 +9,7 @@ def connect():
 
         user="root",
 
-        passwd="jee2024",
+        passwd="Put_your_own_password",
 
         database="restaurant"
 
