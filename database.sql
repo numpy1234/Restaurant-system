@@ -1,0 +1,89 @@
+DROP DATABASE IF EXISTS restaurant;
+
+CREATE DATABASE restaurant;
+
+USE restaurant;
+
+
+CREATE TABLE Users(
+username VARCHAR(50),
+password VARCHAR(100)
+);
+
+
+INSERT INTO Users VALUES
+('admin','Root@12345');
+
+
+
+CREATE TABLE Cook(
+
+CookID INT AUTO_INCREMENT PRIMARY KEY,
+
+Name VARCHAR(50),
+
+Aadhar VARCHAR(20),
+
+Salary INT,
+
+DOJ DATE
+
+);
+
+
+
+CREATE TABLE Dish(
+
+DishID INT AUTO_INCREMENT PRIMARY KEY,
+
+Name VARCHAR(50),
+
+Cost INT,
+
+CookID INT,
+
+FOREIGN KEY(CookID)
+REFERENCES Cook(CookID)
+
+);
+
+
+
+CREATE TABLE Orders(
+
+OrderID INT AUTO_INCREMENT PRIMARY KEY,
+
+Customer VARCHAR(50),
+
+Date DATE,
+
+Total INT
+
+);
+
+
+
+CREATE TABLE OrderItems(
+
+OrderID INT,
+
+DishID INT,
+
+Quantity INT
+
+);
+
+
+
+CREATE TABLE Bills(
+
+BillID INT AUTO_INCREMENT PRIMARY KEY,
+
+OrderID INT,
+
+Amount INT,
+
+Date DATE
+
+);
+
